@@ -1,0 +1,13 @@
+/**
+ * @category    ClassyLlama
+ * @copyright   Copyright (c) 2017 Classy Llama
+ */
+
+& when (@media-common = true) {
+    .product-image-wrapper .product-image-photo:not(.no-alt-image) {
+        .lib-css(transition, opacity 300ms ease-in-out);
+        &:not(.alt-image):hover {
+            opacity: 0;
+        }
+    }
+}

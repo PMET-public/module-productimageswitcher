@@ -5,4 +5,4 @@
  */
 use \Magento\Framework\Component\ComponentRegistrar;
 
-ComponentRegistrar::register(ComponentRegistrar::MODULE, 'MagentoEse_ProuctImageSwitcher', __DIR__);
+ComponentRegistrar::register(ComponentRegistrar::MODULE, 'MagentoEse_ProductImageSwitcher', __DIR__);
