@@ -1,7 +1,7 @@
 # Description
 
 This module adds a 'media_image' product attribute to select the alt image for a product. This alternate image
-will be displayed on the product listing page when the main image is hovered over. Any products that do not have an
+will be displayed on the product listing page when the main image is hovered. Any products that do not have an
 alternate image selected will not have the hover effect on the PLP.
 
 # Usage Instructions
