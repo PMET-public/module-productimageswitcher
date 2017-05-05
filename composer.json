@@ -1,5 +1,5 @@
 {
-  "name": "magentoese/module-productimageswitcher",
+  "name": "magentoese/module-product-image-switcher",
   "type": "magento2-module",
   "require": {
     "magento/framework": "*"

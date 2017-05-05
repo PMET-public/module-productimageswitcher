@@ -1,14 +1,26 @@
 <?php
 /**
- * @category    ClassyLlama
- * @copyright   Copyright (c) 2017 Classy Llama
+ * ClassyLlama_ProductImageSwitcher
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ *
+ * @copyright  Copyright (c) 2017 Classy Llama
+ * @license    http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
  */
-
 namespace MagentoEse\ProductImageSwitcher\Setup;
 
 use Magento\Catalog\Model\Product;
 use Magento\Catalog\Model\ResourceModel\Eav\Attribute;
 
+/**
+ * Class InstallData
+ * @package MagentoEse\ProductImageSwitcher\Setup
+ */
 class InstallData implements \Magento\Framework\Setup\InstallDataInterface
 {
     /**
@@ -16,7 +28,7 @@ class InstallData implements \Magento\Framework\Setup\InstallDataInterface
      *
      * @var eavSetupFactory
      */
-    private $eavSetupFactory;
+    protected $eavSetupFactory;
 
     /**
      * InstallData constructor.
@@ -28,14 +40,16 @@ class InstallData implements \Magento\Framework\Setup\InstallDataInterface
     }
 
     /**
+     * Install new attribute
+     *
      * @param \Magento\Framework\Setup\ModuleDataSetupInterface $setup
      * @param \Magento\Framework\Setup\ModuleContextInterface $context
      * @throws \Exception
      */
     public function install(
         \Magento\Framework\Setup\ModuleDataSetupInterface $setup,
-        \Magento\Framework\Setup\ModuleContextInterface $context)
-    {
+        \Magento\Framework\Setup\ModuleContextInterface $context
+    ) {
         $connection = $setup->getConnection();
         try {
             $connection->beginTransaction();
