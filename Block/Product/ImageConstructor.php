@@ -23,27 +23,27 @@ class ImageConstructor extends \Magento\Catalog\Block\Product\ImageFactory
     /**
      * @var ConfigInterface
      */
-    private $presentationConfig;
+    protected $presentationConfig;
 
     /**
      * @var AssetImageFactory
      */
-    private $viewAssetImageFactory;
+    protected $viewAssetImageFactory;
 
     /**
      * @var ParamsBuilder
      */
-    private $imageParamsBuilder;
+    protected $imageParamsBuilder;
 
     /**
      * @var ObjectManagerInterface
      */
-    private $objectManager;
+    protected $objectManager;
 
     /**
      * @var PlaceholderFactory
      */
-    private $viewAssetPlaceholderFactory;
+    protected $viewAssetPlaceholderFactory;
 
     /**
      * @param ObjectManagerInterface $objectManager
@@ -59,6 +59,7 @@ class ImageConstructor extends \Magento\Catalog\Block\Product\ImageFactory
         PlaceholderFactory $viewAssetPlaceholderFactory,
         ParamsBuilder $imageParamsBuilder
     ) {
+        // all these fields were private in the parent class, copying forward
         $this->objectManager = $objectManager;
         $this->presentationConfig = $presentationConfig;
         $this->viewAssetPlaceholderFactory = $viewAssetPlaceholderFactory;
@@ -69,10 +70,12 @@ class ImageConstructor extends \Magento\Catalog\Block\Product\ImageFactory
     /**
      * Retrieve image custom attributes for HTML element
      *
+     * Copied method from \Magento\Catalog\Block\Product\ImageFactory since it was private
+     *
      * @param array $attributes
      * @return string
      */
-    private function getStringCustomAttributes(array $attributes): string
+    protected function getStringCustomAttributes(array $attributes): string
     {
         $result = [];
         foreach ($attributes as $name => $value) {
@@ -84,11 +87,13 @@ class ImageConstructor extends \Magento\Catalog\Block\Product\ImageFactory
     /**
      * Calculate image ratio
      *
+     * Copied method from \Magento\Catalog\Block\Product\ImageFactory since it was private
+     *
      * @param $width
      * @param $height
      * @return float
      */
-    private function getRatio($width, $height): float
+    protected function getRatio($width, $height): float
     {
         if ($width && $height) {
             return $height / $width;
@@ -99,10 +104,12 @@ class ImageConstructor extends \Magento\Catalog\Block\Product\ImageFactory
     /**
      * @param Product $product
      *
+     * Copied method from \Magento\Catalog\Block\Product\ImageFactory since it was private
+     *
      * @param string $imageType
      * @return string
      */
-    private function getLabel(Product $product, string $imageType): string
+    protected function getLabel(Product $product, string $imageType): string
     {
         $label = $product->getData($imageType . '_' . 'label');
         if (empty($label)) {
@@ -113,6 +120,7 @@ class ImageConstructor extends \Magento\Catalog\Block\Product\ImageFactory
 
     /**
      * Create image block from product
+     *
      * @param Product $product
      * @param string $imageId
      * @param array|null $attributes
