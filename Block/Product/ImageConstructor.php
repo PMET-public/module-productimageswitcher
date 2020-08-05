@@ -83,7 +83,13 @@ class ImageConstructor extends \Magento\Catalog\Block\Product\ImageFactory
         }
         return !empty($result) ? implode(' ', $result) : '';
     }
-
+    private function filterCustomAttributes(array $attributes): array
+    {
+        if (isset($attributes['class'])) {
+            unset($attributes['class']);
+        }
+        return $attributes;
+    }
     /**
      * Calculate image ratio
      *
@@ -159,7 +165,7 @@ class ImageConstructor extends \Magento\Catalog\Block\Product\ImageFactory
             'height' => $imageMiscParams['image_height'],
             'label' => $this->getLabel($product, $imageMiscParams['image_type']),
             'ratio' => $this->getRatio($imageMiscParams['image_width'], $imageMiscParams['image_height']),
-            'custom_attributes' => $this->getStringCustomAttributes($attributes),
+            'custom_attributes' => $this->filterCustomAttributes($attributes),
             'product_id' => $product->getId()
         ];
         // BEGIN EDIT

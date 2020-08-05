@@ -16,5 +16,5 @@
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <preference for="Magento\Catalog\Block\Product\ImageBuilder" type="MagentoEse\ProductImageSwitcher\Block\Product\ImageBuilder" />
-    <preference for="\Magento\Catalog\Block\Product\ImageFactory" type="MagentoEse\ProductImageSwitcher\Block\Product\ImageConstructor"/>
+    <preference for="Magento\Catalog\Block\Product\ImageFactory" type="MagentoEse\ProductImageSwitcher\Block\Product\ImageConstructor"/>
 </config>
